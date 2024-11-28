@@ -1,12 +1,23 @@
 html {
   background-image: linear-gradient(#42A1EC, #0070C9);
+  background-attachment: fixed;
 }
 
 html, body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  /* height: 100%; */
+}
+
+nav {
+  /* border: 1px solid blue; */
+  display: flex;
+  margin-left: 2rem;
+  color: #fafafa
+}
+
+.brand-text {
+  font-size: 0.6rem;
 }
 
 :root {
@@ -17,29 +28,43 @@ html, body {
 
   color-scheme: light dark;
   color: rgba(57, 56, 56, 0.87);
-  /* color: rgba(255, 255, 255, 0.87); */
-  /* background-color: #242424; */
-
+  
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.currency-converter {
+.layout-container {
   display: flex;
-  /* align-items: center; */
   align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
-  /* border: 1px solid red; */
-  border-radius: 2rem;
-  /* background-color: #4d4949; */
-  /* margin-top: 4rem; */
-  max-width: 760px;
-  margin: 4rem auto;
-  padding: 1rem;
+  justify-content: space-between;
+  /* max-width: 760px; */
+  max-width: 90%;
+  width: 760px;
+  margin: 0.4rem auto;
+  gap: 1rem;
+  /* border: 1px solid green; */
   background-color: #f5f2f2;
+  border-radius: 2rem;
+}
+
+.currency-converter {
+  flex: 1;
+  border-radius: 2rem;
+  padding: 1rem;
+  max-width: 360px;
+}
+
+.commercial-img {
+  flex: 0 0 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* border: 1px solid blue; */
+  border-radius: 2rem;
+  padding: 1rem;
 }
 
 .from-currency-div, .to-currency-div, .amount-div {
@@ -117,6 +142,31 @@ button:focus {
 .commercial-img {
   display: flex;
   justify-content: flex-end;
+}
+
+img {
+  width: 300px;
+  height: 400px;
+  border-radius: 1rem;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .layout-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .commercial-img,
+  .currency-converter {
+    max-width: 100%;
+    flex: none;
+  }
+
+  img {
+    width: 100%; /* Ensure the image scales down */
+    height: auto;
+  }
 }
 
 

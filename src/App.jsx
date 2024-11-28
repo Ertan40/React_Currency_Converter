@@ -65,55 +65,61 @@ function App() {
 
   return (
     <>
-      <div className="currency-converter">
-        <h1>Currency Converter</h1>
-        <div className="from-currency-div">
-          <label htmlFor="from-currency">From:</label>
-          <select
-            id="from-currency"
-            value={fromCurrency}
-            onChange={(e) => setFromCurrency(e.target.value)}
-          >
-            {currencies.map((currency) => (
-              <option key={currency} value={currency}>
-                {currency}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="to-currency-div">
-          <label htmlFor="to-currency">To:</label>
-          <select
-            id="to-currency"
-            value={toCurrency}
-            onChange={(e) => setToCurrency(e.target.value)}
-          >
-            {currencies.map((currency) => (
-              <option key={currency} value={currency}>
-                {currency}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="amount-div">
-          <label htmlFor="amount">Amount:</label>
-          <input
-            id="amount"
-            type="number"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            placeholder="Enter an amount"
-          />
-        </div>
-        <button onClick={handleConvert}>Convert</button>
-        {convertedAmount !== null && (
-          <div className="result">
-            <h2>
-              {amount} {fromCurrency} = {convertedAmount} {toCurrency}
-            </h2>
+      <div className="layout-container">
+        <div className="currency-converter">
+          <h1>Currency Converter</h1>
+          <div className="from-currency-div">
+            <label htmlFor="from-currency">From:</label>
+            <select
+              id="from-currency"
+              value={fromCurrency}
+              onChange={(e) => setFromCurrency(e.target.value)}
+            >
+              {currencies.map((currency) => (
+                <option key={currency} value={currency}>
+                  {currency}
+                </option>
+              ))}
+            </select>
           </div>
-        )}
-        <Main data={currencyData} />
+          <div className="to-currency-div">
+            <label htmlFor="to-currency">To:</label>
+            <select
+              id="to-currency"
+              value={toCurrency}
+              onChange={(e) => setToCurrency(e.target.value)}
+            >
+              {currencies.map((currency) => (
+                <option key={currency} value={currency}>
+                  {currency}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="amount-div">
+            <label htmlFor="amount">Amount:</label>
+            <input
+              id="amount"
+              type="number"
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+              placeholder="Enter an amount"
+            />
+          </div>
+          <button onClick={handleConvert}>Convert</button>
+          {convertedAmount !== null && (
+            <div className="result">
+              <h2>
+                {amount} {fromCurrency} = {convertedAmount} {toCurrency}
+              </h2>
+            </div>
+          )}
+          <Main data={currencyData} toCurrency={toCurrency} />
+        </div>
+        <div className="commercial-img">
+          <p>Commercial banner for promotions</p>
+          <img src="add_goes_here.jpg" alt="Commercial banner for promotions" />
+        </div>
       </div>
     </>
   );
