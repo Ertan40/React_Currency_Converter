@@ -26,10 +26,13 @@ This project is a simple Currency Converter Application built using React and st
 - Fetches exchange rate data using Free Currency API.
 - Implements localStorage caching to store exchange rate data for up to 24 hours.
 - Handles currency conversion based on user input.
+  
 **Main.jsx:**
 - Displays the exchange rate for the selected target currency (toCurrency).
+  
 **index.css**
 - Provides styling for the app, including responsive design and hover effects.
+  
 **index.html**
 - The HTML template used to render the React app.
 
